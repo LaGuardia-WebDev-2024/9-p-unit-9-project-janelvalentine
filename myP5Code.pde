@@ -2,7 +2,8 @@ setup = function() {
     size(400, 400);
 };
 
-var answer = 1;
+
+
 
 draw = function(){
   background(100,100,100);
@@ -12,15 +13,21 @@ draw = function(){
   triangle(200, 104, 280, 280, 120, 280);
   fill(255, 255, 255);
   
-  if (answer == 1) {
-    text("YOUR", 176, 200);
-    text("MESSAGE", 159, 229); 
-  }
+  drawEmoji(180,80); 
   
-};
-
-mouseClicked = function(){
-  answer = round(random(1, 5));
-};
-
-
+    if (mousePressed){
+   text("NOPE", random(124,200), random(120,280)); 
+ 
+ fill(0,0,255);
+   ellipse(mouseX,mouseY,30,30);
+   
+  };
+  };
+ 
+var drawEmoji = function(emojiX, emojiY, emojiColor){
+    textSize(30);
+    fill(emojiColor);
+    text("😈", emojiX, emojiY, emojiColor);
+    
+    
+  };
